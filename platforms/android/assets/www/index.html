@@ -17,6 +17,7 @@
         
 		<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/todo.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
@@ -26,21 +27,98 @@
     </head>
     <body>
         
-        <div data-role="page">
+        <div data-role="page" id="pagindex">
             <div data-role="header">
                 <h1>Vecinos en Alerta</h1>
             </div><!-- /header -->
         
             <div role="main" class="ui-content">
-                <a href="#" class="ui-btn left-button">Pánico</a>
-                <a href="#" class="ui-btn left-button">Alertar vecinos</a>
-                <a href="#" class="ui-btn left-button">Enviar SMS</a>
-                <a href="#" class="ui-btn left-button">Sospechoso</a>
-                <a href="#" class="ui-btn left-button">Armar red de vecinos</a>
-                <a href="#" class="ui-btn left-button">Configuración</a>
+                <a href="#"  onClick="mandarAlertaPanico();" class="ui-btn btn-panico">Pánico</a>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#pagAlertarVecinos" class="ui-btn btnmenu"><img id="imgmenu" src="img/alertarVecinos.png"><br>Alertar vecinos</a></div>
+                    <div class="ui-block-b"><a href="#pagSospechoso" class="ui-btn btnmenu"><img id="imgmenu" src="img/sospechoso.png"><br>Sospechoso</a></div>
+                    <div class="ui-block-b"><a href="#pagArmarRed" class="ui-btn btnmenu"><img id="imgmenu" src="img/red.png"><br>Armar red de vecinos</a></div>
+                    <div class="ui-block-b"><a href="#pagConfig" class="ui-btn btnmenu"><img id="imgmenu" src="img/config.png"><br>Configuración</a></div>
+                    <div class="ui-block-b"><a href="#pagTelEmergencia" class="ui-btn btnmenu"><img id="imgmenu" src="img/alertarVecinos.png"><br>Telefonos de emergencia</a></div>
+                </div><!-- /grid-a -->
+                <div data-role="navbar">
+					<ul>
+						<li><a href="#"><img id="imgmenu" src="img/alertarVecinos.png"><br>Alertar vecinos</a></li>
+						<li><a href="#"><img id="imgmenu" src="img/sospechoso.png"><br>Sospechoso</a></li>
+					</ul>
+                    <ul>
+						<li><a href="#"><img id="imgmenu" src="img/red.png"><br>Armar red de vecinos</a></li>
+						<li><a href="#"><img id="imgmenu" src="img/config.png"><br>Configuración</a></li>
+						
+					</ul>
+				</div><!-- /navbar -->
+ 
+               <!-- <a href="#" class="ui-btn left-button">Enviar SMS</a>-->
             </div><!-- /content -->
-       
         </div><!-- /page -->
+<!------------------------ página Alertar Vecinos --------------------->
+        <div data-role="page" id="pagAlertarVecinos">
+            <div data-role="header" data-position="fixed">
+            	<a href="#" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+                <h1>Alertar vecinos</h1>
+            </div><!-- /header -->
+        
+            <div role="main" class="ui-content">
+            	<form>
+					<label for="textarea-1">Escriba aquí su mensaje de alerta:</label>
+                    <textarea name="textarea-1" id="textarea-1"></textarea>
+                	<div align="right"><a href="#" class="ui-btn ui-btn-inline ui-shadow">Enviar</a></div>
+					<!--<button class="ui-btn ui-btn-inline ui-shadow">Button</button>-->
+                </form>
+            </div><!-- /content -->
+		</div><!-- /page -->
+<!------------------------ página Sospechoso --------------------->        
+        <div data-role="page" id="pagSospechoso">
+            <div data-role="header" data-position="fixed">
+            	<a href="#" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+                <h1>Sospechoso</h1>
+            </div><!-- /header -->
+        
+            <div role="main" class="ui-content">
+            	<form>
+					<label for="textarea-1">Escriba aquí su mensaje:</label>
+                    <textarea name="textarea-1" id="textarea-1"></textarea>
+                	<div align="right"><a href="#" class="ui-btn ui-btn-inline ui-shadow">Enviar</a></div>
+					<!--<button class="ui-btn ui-btn-inline ui-shadow">Button</button>-->
+                </form>
+            </div><!-- /content -->
+		</div><!-- /page -->
+<!------------------------ página Armar Red de Vecinos --------------------->        
+        <div data-role="page" id="pagArmarRed">
+            <div data-role="header" data-position="fixed">
+            	<a href="#" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+                <h1>Armar red de vecinos</h1>
+            </div><!-- /header -->
+        
+            <div role="main" class="ui-content">
+            </div><!-- /content -->
+		</div><!-- /page -->
+<!------------------------ página Configuración --------------------->        
+        <div data-role="page" id="pagConfig">
+            <div data-role="header" data-position="fixed">
+            	<a href="#" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+                <h1>Configuración</h1>
+            </div><!-- /header -->
+        
+            <div role="main" class="ui-content">
+            </div><!-- /content -->
+		</div><!-- /page --> 
+<!------------------------ página Telefonos de Emergencia --------------------->        
+        <div data-role="page" id="pagTelEmergencia">
+            <div data-role="header" data-position="fixed">
+            	<a href="#" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+                <h1>Telefonos de emergencia</h1>
+            </div><!-- /header -->
+        
+            <div role="main" class="ui-content">
+            </div><!-- /content -->
+		</div><!-- /page -->         
+        
 
 
     </body>
