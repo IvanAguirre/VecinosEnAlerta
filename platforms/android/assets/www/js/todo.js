@@ -14,7 +14,7 @@ function fff(){
 function mandarAlertaPanico()
 {
 	alert("Alerta enviada");
-	var mensaje = "Fulano ha activado la alerta de panico, ¡Actúe! su vecino puede estar en peligro";
+	var mensaje = "Su vecino Iván Aguirre ha activado la alerta de Auxilio, ¡Actúe! su vecino puede estar en peligro";
 
 // Comprobamos que está disponible AJAX
 	if(window.XMLHttpRequest) 
@@ -36,5 +36,22 @@ ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 ajax.send("&message=" + mensaje + "&regId='1'")
 
 }
+
+
+$(document).ready(function(){
+    $("form").submit(function(event){
+        event.preventDefault();
+		var mensaje = $("#msjActoDelictivo").val()
+		alert(mensaje);
+		
+		if(window.XMLHttpRequest) 
+		{
+			ajax = new XMLHttpRequest()
+		}
+		ajax.open("POST","http://www.agendasonidocaracol.mx/VecinosEnAlerta/PhonegapPushNotifications/pedir_auxilio.php",true)
+		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+		ajax.send("&message=" + mensaje + "&regId='1'")
+    });
+});
 
               

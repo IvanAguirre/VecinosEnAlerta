@@ -23,60 +23,75 @@
         </script>
         
         
-        <title>Hello World</title>
+        <title>Vecinos Unidos</title>
     </head>
     <body>
         
         <div data-role="page" id="pagindex">
-            <div data-role="header">
-                <h1>Vecinos en Alerta</h1>
+        <!--<div align="center"><img src="img/logofinal.png" width="45%" style="margin:0" /></div>-->
+
+            <div data-role="headerPagInicio" class="headerPagInicio" align="center" >
+                <!--<h1>Vecinos Unidos</h1>-->
+                <img src="img/logofinal.png" style="width:150px" />
             </div><!-- /header -->
-        
-            <div role="main" class="ui-content">
-                <a href="#"  onClick="mandarAlertaPanico();" class="ui-btn btn-panico">Pánico</a>
+    
+        <div class="ui-grid-solo">
+        	<div class="ui-block-a" align="center"><a href="#" style="width:50%; font-size: 20px; margin-bottom:-10px;" onClick="mandarAlertaPanico();" class="ui-btn btn-panico ui-corner-all ui-shadow">Auxilio</a></div>
+        	<div role="main" class="ui-content">
                 <div class="ui-grid-a">
-                    <div class="ui-block-a"><a href="#pagAlertarVecinos" class="ui-btn btnmenu"><img id="imgmenu" src="img/alertarVecinos.png"><br>Alertar vecinos</a></div>
-                    <div class="ui-block-b"><a href="#pagSospechoso" class="ui-btn btnmenu"><img id="imgmenu" src="img/sospechoso.png"><br>Sospechoso</a></div>
-                    <div class="ui-block-b"><a href="#pagArmarRed" class="ui-btn btnmenu"><img id="imgmenu" src="img/red.png"><br>Armar red de vecinos</a></div>
+                    <div class="ui-block-a"><a href="#pagAlertarVecinos" class="ui-btn btnmenu"><img id="imgmenu" src="img/actoDelictivo.png"><br>Acto delictivo</a></div>
+                    <div class="ui-block-b"><a href="#pagSospechoso" class="ui-btn btnmenu"><img id="imgmenu" src="img/sospechoso.png"><br>Actividad sospechosa</a></div>
+                    <!--<div class="ui-block-a"><a href="#pagArmarRed" class="ui-btn btnmenu"><img id="imgmenu" src="img/red.png"><br>Armar red de vecinos</a></div>-->
+                    <div class="ui-block-a"><a href="#pagTelEmergencia" class="ui-btn btnmenu"><img id="imgmenu" src="img/telefono.png"><br>Teléfonos de emergencia</a></div>
                     <div class="ui-block-b"><a href="#pagConfig" class="ui-btn btnmenu"><img id="imgmenu" src="img/config.png"><br>Configuración</a></div>
-                    <div class="ui-block-b"><a href="#pagTelEmergencia" class="ui-btn btnmenu"><img id="imgmenu" src="img/alertarVecinos.png"><br>Telefonos de emergencia</a></div>
                 </div><!-- /grid-a -->
-                <div data-role="navbar">
+
+                
+                <!-- <div data-role="navbar">
 					<ul>
-						<li><a href="#"><img id="imgmenu" src="img/alertarVecinos.png"><br>Alertar vecinos</a></li>
-						<li><a href="#"><img id="imgmenu" src="img/sospechoso.png"><br>Sospechoso</a></li>
+						<li><a href="#pagAlertarVecinos" class="ui-btn btnmenu"><img id="imgmenu" src="img/alertarVecinos.png"><br>Alertar vecinos</a></li>
+						<li><a href="#pagAlertarVecinos" class="ui-btn btnmenu"><img id="imgmenu" src="img/alertarVecinos.png"><br>Alertar vecinos</a></li>
 					</ul>
                     <ul>
-						<li><a href="#"><img id="imgmenu" src="img/red.png"><br>Armar red de vecinos</a></li>
-						<li><a href="#"><img id="imgmenu" src="img/config.png"><br>Configuración</a></li>
-						
+						<li><a href="#pagAlertarVecinos" class="ui-btn btnmenu"><img id="imgmenu" src="img/alertarVecinos.png"><br>Alertar vecinos</a></li>
+						<li><a href="#pagAlertarVecinos" class="ui-btn btnmenu"><img id="imgmenu" src="img/alertarVecinos.png"><br>Alertar vecinos</a></li>					
 					</ul>
-				</div><!-- /navbar -->
+                    <ul>
+						<li><a href="#pagAlertarVecinos" class="ui-btn btnmenu"><img id="imgmenu" src="img/alertarVecinos.png"><br>Alertar vecinos</a></li>
+                        <li></li>
+					</ul>
+				</div> -->
+
+				
  
                <!-- <a href="#" class="ui-btn left-button">Enviar SMS</a>-->
             </div><!-- /content -->
+		</div>
         </div><!-- /page -->
-<!------------------------ página Alertar Vecinos --------------------->
+<!------------------------ página Acto Delectivo --------------------->
         <div data-role="page" id="pagAlertarVecinos">
             <div data-role="header" data-position="fixed">
             	<a href="#" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
-                <h1>Alertar vecinos</h1>
+                <h1>Acto delictivo</h1>
             </div><!-- /header -->
         
             <div role="main" class="ui-content">
-            	<form>
-					<label for="textarea-1">Escriba aquí su mensaje de alerta:</label>
-                    <textarea name="textarea-1" id="textarea-1"></textarea>
-                	<div align="right"><a href="#" class="ui-btn ui-btn-inline ui-shadow">Enviar</a></div>
-					<!--<button class="ui-btn ui-btn-inline ui-shadow">Button</button>-->
+            	<form id="frmActoDelictivo">
+                	<label for="textarea-1">Escriba aquí su mensaje:</label>
+                    <textarea name="msjActoDelictivo" id="msjActoDelictivo"></textarea>
+                    <div align="right">
+                        <input type="submit" value="Enviar" data-inline="true">
+                        <!--<a href="#" onClick="enviar_formulario()" class="ui-btn ui-btn-inline ui-shadow">Enviar</a>-->
+                    </div>
+                    <!--<button class="ui-btn ui-btn-inline ui-shadow">Button</button>-->
                 </form>
             </div><!-- /content -->
 		</div><!-- /page -->
-<!------------------------ página Sospechoso --------------------->        
+<!------------------------ página Actividad sospechosa --------------------->        
         <div data-role="page" id="pagSospechoso">
             <div data-role="header" data-position="fixed">
             	<a href="#" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
-                <h1>Sospechoso</h1>
+                <h1>Actividad sospechosa</h1>
             </div><!-- /header -->
         
             <div role="main" class="ui-content">
@@ -106,20 +121,48 @@
             </div><!-- /header -->
         
             <div role="main" class="ui-content">
+            	<ul data-role="listview">
+                	<li><a href="#">Armar red de vecinos</a></li>
+                	<!--<li><a href="#"></a></li>
+                    <li><a href="#"></a></li>-->
+                </ul>
             </div><!-- /content -->
 		</div><!-- /page --> 
 <!------------------------ página Telefonos de Emergencia --------------------->        
         <div data-role="page" id="pagTelEmergencia">
             <div data-role="header" data-position="fixed">
             	<a href="#" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
-                <h1>Telefonos de emergencia</h1>
+                <h1>Teléfonos de emergencias</h1>
+            </div><!-- /header -->
+        
+            <div role="main" class="ui-content">
+            <ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true">
+					<li><a href="#">066 Emeregencias</a></li>
+					<li><a href="#">IMSS</a></li>
+					<li><a href="#">Cruz Roja</a></li>
+					<li><a href="#">ISSSTE</a></li>
+					<li><a href="#">Hospital General</a></li>
+					<li><a href="#">Bomberos</a></li>
+                    <li><a href="#">Hospital Morelos</a></li>
+                    <li><a href="#">CAPA</a></li>
+                    <li><a href="#">Servicios Públicos</a></li>
+                    <li><a href="#">CFE</a></li>
+                    <li><a href="#">Radio Taxi</a></li>
+                    <li><a href="#">Protección Civil</a></li>
+				</ul>
+            </div><!-- /content -->
+		</div><!-- /page -->       
+<!------------------------ página mensaje alerta --------------------->        
+    <div data-role="page" id="pagMsjAlerta">
+            <div data-role="header" data-position="fixed">
+            	<a href="#" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>
+                <h1>¡Alerta!</h1>
             </div><!-- /header -->
         
             <div role="main" class="ui-content">
             </div><!-- /content -->
-		</div><!-- /page -->         
-        
-
+		</div><!-- /page -->       
+<!----------------------------------------------------------------------------->
 
     </body>
 </html>
